@@ -1,0 +1,6 @@
+﻿<Project>
+
+    <ItemGroup>
+        <Content Include="**\*" Exclude="obj\**\*;bin\**\*" />
+    </ItemGroup>
+</Project>
