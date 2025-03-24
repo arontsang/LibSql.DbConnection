@@ -22,11 +22,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\LibSql.DbConnection\LibSql.DbConnection.csproj" />
+      <ProjectReference Include="..\LibSql.DbConnection\LibSql.DbConnection.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\LibSql.DbConnection\LibSql.DbConnection.csproj" />
+      <ProjectReference Include="..\LibSql.DbConnection\LibSql.DbConnection.csproj" />
     </ItemGroup>
 
 </Project>

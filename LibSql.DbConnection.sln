@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Native", "src\LibSql.DbConnection.Native\LibSql.DbConnection.Native.rsproj", "{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Tests", "LibSql.DbConnection.Tests\LibSql.DbConnection.Tests.csproj", "{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Tests", "src\LibSql.DbConnection.Tests\LibSql.DbConnection.Tests.csproj", "{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foo", "src\Foo\Foo.csproj", "{556DECBF-CB85-4B61-AC8A-DB3A714A261C}"
 EndProject
