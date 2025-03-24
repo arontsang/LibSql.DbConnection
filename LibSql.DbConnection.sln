@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{028C6D19-2136-4DD0-9D9F-74E335863D8D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection", "src\LibSql.DbConnection\LibSql.DbConnection.csproj", "{CDCADDF1-241B-40A0-A31A-27BEDB2614FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Native", "src\LibSql.DbConnection.Native\LibSql.DbConnection.Native.rsproj", "{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}"
@@ -40,7 +38,5 @@ Global
 		{556DECBF-CB85-4B61-AC8A-DB3A714A261C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CDCADDF1-241B-40A0-A31A-27BEDB2614FB} = {028C6D19-2136-4DD0-9D9F-74E335863D8D}
-		{4198274A-85A4-4480-AED5-C4DD7C0C2AA3} = {028C6D19-2136-4DD0-9D9F-74E335863D8D}
 	EndGlobalSection
 EndGlobal

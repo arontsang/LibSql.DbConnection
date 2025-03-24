@@ -7,6 +7,6 @@ public class Tests
     public void Test1()
     {
         var ret = Foo.DoFoo(10, 20);
-        Assert.AreEqual(30, ret);
+        Assert.That(ret, Is.EqualTo(30));
     }
 }
