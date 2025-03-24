@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Native", "src\LibSql.DbConnection.Native\LibSql.DbConnection.Native.rsproj", "{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Tests", "LibSql.DbConnection.Tests\LibSql.DbConnection.Tests.csproj", "{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foo", "src\Foo\Foo.csproj", "{556DECBF-CB85-4B61-AC8A-DB3A714A261C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556DECBF-CB85-4B61-AC8A-DB3A714A261C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556DECBF-CB85-4B61-AC8A-DB3A714A261C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556DECBF-CB85-4B61-AC8A-DB3A714A261C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556DECBF-CB85-4B61-AC8A-DB3A714A261C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CDCADDF1-241B-40A0-A31A-27BEDB2614FB} = {028C6D19-2136-4DD0-9D9F-74E335863D8D}

@@ -1,5 +1,5 @@
 [package]
-name = "libsql_db_connection"
+name = "Turso"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,6 +7,6 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-
+libsql = "0.6.0"
 [build-dependencies]
 csbindgen = "1.9.3"

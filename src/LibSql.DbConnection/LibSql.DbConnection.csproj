@@ -1,8 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  
+  <Target Name="BuildNative" BeforeTargets="Build">
+    <PropertyGroup>
+      <RustBuildCommand >cargo build</RustBuildCommand>
+      <RustBuildCommand Condition=" '$(Configuration)' ==  'Release' " >cargo build -r Release</RustBuildCommand>
+    </PropertyGroup>
+    <Exec Command="$(RustBuildCommand)"
+          ConsoleToMsBuild="true"
+          WorkingDirectory="..\LibSql.DbConnection.Native"
+    />
+  </Target>
+  <ItemGroup>
+    <Compile Include="..\LibSql.DbConnection.Native\bindings\**\*.cs">
+      <LinkBase>Bindings</LinkBase>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup  Condition=" '$(Configuration)' ==  'Release' ">
+    <None Include="..\LibSql.DbConnection.Native\target\release\*.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <LinkBase>runtimes\linux-x64</LinkBase>
+    </None>
+  </ItemGroup>
+  <ItemGroup  Condition=" '$(Configuration)' ==  'Debug' ">
+    <None Include="..\LibSql.DbConnection.Native\target\debug\*.so"
+          Condition="!$([System.OperatingSystem]::IsWindows())">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="..\LibSql.DbConnection.Native\target\debug\*.dll"
+          Condition="$([System.OperatingSystem]::IsWindows())">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
 </Project>

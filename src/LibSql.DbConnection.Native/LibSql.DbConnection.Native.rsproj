@@ -1,6 +1,17 @@
-﻿<Project>
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
     <ItemGroup>
         <Content Include="**\*" Exclude="obj\**\*;bin\**\*" />
     </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="**\*" />
+      <None Include="bindings\**\*" />
+    </ItemGroup>
+    <Target Name="CreateManifestResourceNames" />
+    <Target Name="CoreCompile" />
 </Project>
