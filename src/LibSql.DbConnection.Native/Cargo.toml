@@ -7,6 +7,11 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+async-executor = { version = "1.13.1", features = ["static"]}
+async-io = "2.4.0"
+futures = "0.3.31"
+futures-lite = "2.6.0"
 libsql = "0.6.0"
+smol = "2.0.2"
 [build-dependencies]
 csbindgen = "1.9.3"
