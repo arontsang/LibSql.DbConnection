@@ -1,7 +1,20 @@
-mod sleep;
-mod scheduler;
-mod promise;
+mod db;
+mod runtime;
+mod patterns;
 
+use interoptopus::inventory::{Inventory, InventoryBuilder};
+use interoptopus::{extra_type, function, pattern};
+
+
+pub fn ffi_inventory() -> Inventory {
+    InventoryBuilder::new()
+        .register(extra_type!(db::LibTursoDatabase))
+        .register(pattern!(runtime::LibTursoRuntime))
+        // .register(pattern!(asynk::AsyncService))
+        // .register(function!(scheduler::poll_scheduler))
+        .validate()
+        .build()
+}
 
 #[no_mangle]
 pub extern "C" fn my_add(x: i32, y: i32) -> i32 {

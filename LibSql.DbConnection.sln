@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection", "src\LibSql.DbConnection\LibSql.DbConnection.csproj", "{CDCADDF1-241B-40A0-A31A-27BEDB2614FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Native", "src\LibSql.DbConnection.Native\LibSql.DbConnection.Native.rsproj", "{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libTurso-native", "src\libTurso-native\libTurso-native.rsproj", "{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libTurso-native-build", "src\libTurso-native-build\libTurso-native-build.rsproj", "{38479254-5adc-4c24-b950-2ea1a93509eb}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSql.DbConnection.Tests", "src\LibSql.DbConnection.Tests\LibSql.DbConnection.Tests.csproj", "{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}"
 EndProject
@@ -28,6 +30,10 @@ Global
 		{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4198274A-85A4-4480-AED5-C4DD7C0C2AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38479254-5adc-4c24-b950-2ea1a93509eb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38479254-5adc-4c24-b950-2ea1a93509eb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38479254-5adc-4c24-b950-2ea1a93509eb}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38479254-5adc-4c24-b950-2ea1a93509eb}.Release|Any CPU.Build.0 = Release|Any CPU
 		{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945B2102-5ED1-4EAF-9D12-14A7F7B1B367}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -4,11 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [lib]
-crate-type = ["cdylib"]
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 async-io = "2.4.0"
 async-task = "4.7.1"
+interoptopus = "0.15.0-alpha.6"
 libsql = "0.6.0"
-[build-dependencies]
-csbindgen = "1.9.3"
+tokio = "1.45.1"
