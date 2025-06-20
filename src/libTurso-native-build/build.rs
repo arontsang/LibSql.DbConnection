@@ -6,7 +6,7 @@ use interoptopus::backend::NamespaceMappings;
 
 // By adding the interop generation logic into a `build.rs` that depends on
 // our `core_library_ffi` we ensure that upon `cargo build` both the `.dll`
-// gets built, as well as the `.cs` files.
+// gets built, and the `.cs` files.
 //
 // Instead, if you used to unit test trick in the other examples, you will have
 // to run both `cargo build` to produce the `.dll` and `cargo test`

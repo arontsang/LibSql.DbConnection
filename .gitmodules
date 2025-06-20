@@ -1,0 +1,3 @@
+[submodule "dependency/interoptopus"]
+	path = dependency/interoptopus
+	url = https://github.com/ralfbiedert/interoptopus.git
