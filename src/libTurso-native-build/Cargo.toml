@@ -1,13 +1,13 @@
 [package]
 name = "turso_dotnet_build"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 
 [dependencies]
 turso_dotnet = { path = "../libTurso-native" }
 
 [build-dependencies]
-interoptopus = "0.15.0-alpha.6"
-interoptopus_backend_csharp = "0.15.0-alpha.7"
+interoptopus = { path = "../../dependency/interoptopus/crates/core" }
+interoptopus_backend_csharp = { path = "../../dependency/interoptopus/crates/backend_csharp" }
 turso_dotnet = { path = "../libTurso-native" }

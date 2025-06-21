@@ -3,20 +3,20 @@ mod runtime;
 mod patterns;
 
 use interoptopus::inventory::{Inventory, InventoryBuilder};
-use interoptopus::{extra_type, function, pattern};
-
+use interoptopus::{builtins_vec, extra_type, ffi, function, pattern};
+use libsql::Database;
 
 pub fn ffi_inventory() -> Inventory {
-    InventoryBuilder::new()
-        .register(extra_type!(db::LibTursoDatabase))
+    Inventory::builder()
+        .register(function!(runtime::pattern_vec_1))
+        .register(builtins_vec!(u8))
+        .register(pattern!(db::DatabaseProxy))
         .register(pattern!(runtime::LibTursoRuntime))
-        // .register(pattern!(asynk::AsyncService))
-        // .register(function!(scheduler::poll_scheduler))
         .validate()
         .build()
 }
 
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn my_add(x: i32, y: i32) -> i32 {
     println!("hello there!");
     x + y
@@ -32,13 +32,13 @@ pub struct Context {
 
 
 
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn create_context() -> *mut Context {
     let ctx = Box::new(Context { foo: true, bar: 0, baz: 0 });
     Box::into_raw(ctx)
 }
 
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn delete_context(context: *mut Context) {
     let _ = unsafe {
         Box::from_raw(context)

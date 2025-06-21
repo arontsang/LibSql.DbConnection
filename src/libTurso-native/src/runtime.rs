@@ -1,13 +1,14 @@
 use std::future::Future;
 use std::sync::Arc;
 use crate::patterns::result::Error;
-use interoptopus::ffi_type;
+use interoptopus::{ffi_function, ffi_service_method, ffi_type};
 use interoptopus::{ffi, ffi_service};
 use interoptopus::pattern::asynk::{AsyncRuntime, AsyncSelf, AsyncThreadLocal};
 use interoptopus::pattern::result::{result_to_ffi, result_to_ffi_async};
-use libsql::Builder;
+use libsql::{Builder, Database};
 use tokio::runtime::Runtime;
-use crate::db::LibTursoDatabase;
+use crate::db::{DatabaseBox, DatabaseProxy};
+
 type This = AsyncSelf<LibTursoRuntime>;
 #[ffi_type(opaque)]
 pub struct LibTursoRuntime {
@@ -41,14 +42,20 @@ impl LibTursoRuntime {
         })
     }
 
-    pub async fn build_in_memory(_this: This) -> ffi::Result<LibTursoDatabase, Error> {
+    pub async fn build_in_memory(_this: This) -> ffi::Result<DatabaseBox, Error> {
         result_to_ffi_async(async || {
             let db = Builder::new_local(":memory:").build().await
                 .map_err(|_| Error::Fail)?;
-            let db = Box::new(db);
-            let db = LibTursoDatabase::new(db);
+            
+            let db = crate::db::DatabaseBox::from(db);
             Ok(db)
         }).await
     }
+
+
+}
+#[ffi_function]
+pub fn pattern_vec_1() -> ffi::Vec<u8> {
+    vec![1, 2, 3].into()
 }
 

@@ -1,7 +1,7 @@
 [package]
 name = "turso_dotnet"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [lib]
 path = "src/lib.rs"
@@ -10,6 +10,6 @@ crate-type = ["cdylib", "rlib"]
 [dependencies]
 async-io = "2.4.0"
 async-task = "4.7.1"
-interoptopus = "0.15.0-alpha.6"
+interoptopus = { path = "../../dependency/interoptopus/crates/core" }
 libsql = "0.6.0"
 tokio = "1.45.1"

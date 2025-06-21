@@ -818,8 +818,6 @@ dependencies = [
 [[package]]
 name = "interoptopus"
 version = "0.15.0-alpha.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "52722d519121261f954fb02c0440cf55c34340782cd113b37e856323b1dc668b"
 dependencies = [
  "interoptopus_proc",
 ]
@@ -827,8 +825,6 @@ dependencies = [
 [[package]]
 name = "interoptopus_proc"
 version = "0.15.0-alpha.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8d88bb486adf90bdc32c7a48f01e53bff8fd4a8c124943ae3878f961b81cd46f"
 dependencies = [
  "darling",
  "prettyplease",
