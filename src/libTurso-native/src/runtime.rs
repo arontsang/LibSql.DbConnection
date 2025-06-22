@@ -12,7 +12,7 @@ use crate::db::{DatabaseBox, DatabaseProxy};
 type This = AsyncSelf<LibTursoRuntime>;
 #[ffi_type(opaque)]
 pub struct LibTursoRuntime {
-    pub runtime: Arc<Runtime>,
+    pub runtime: Arc<Box<Runtime>>,
 }
 
 impl AsyncRuntime for LibTursoRuntime {
@@ -37,6 +37,7 @@ impl LibTursoRuntime {
                 .build()
                 .map_err(|_| Error::Fail)?;
 
+            let runtime = Box::new(runtime);
             let runtime = Arc::new(runtime);
             Ok(Self { runtime })
         })
@@ -47,7 +48,7 @@ impl LibTursoRuntime {
             let db = Builder::new_local(":memory:").build().await
                 .map_err(|_| Error::Fail)?;
             
-            let db = crate::db::DatabaseBox::from(db);
+            let db = crate::db::DatabaseBox::new(db, _this.runtime.clone());
             Ok(db)
         }).await
     }
